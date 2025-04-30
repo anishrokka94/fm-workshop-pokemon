@@ -1,0 +1,190 @@
+// Option B: Include parts of Bootstrap
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../../../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$primary: #9C4DF4;
+$secondary: #FF6652;
+$primary-soft: #E4E2F4;
+$light: #fff;
+
+$colors: (
+  "success": #10B981,
+  "danger":   #F44361,
+  "light": #fff
+);
+
+
+// navbar 
+$navbar-padding-y: 1rem;
+$navbar-nav-link-padding-y: 1rem;
+$navbar-light-color: #18181B;
+
+// buttons 
+$btn-padding-y: 8px;
+$btn-padding-x: 16px;
+// $btn-font-family: $brand-font-medium;
+// $btn-font-size: $base-font-sm;
+$btn-padding-x-sm: 16px;
+$btn-border-radius: 8px;
+$btn-border-radius-sm: 8px;
+
+// card
+// $card-color: $neutral-n1;
+$card-border-width: 0;
+// $card-box-shadow: $shadow-4;
+$card-border-radius: 8px;
+// $card-title-color: $neutral-n1;
+
+// table
+$table-border-color: #EDEDF7;
+$table-cell-padding-y: 16px;
+$table-cell-padding-x: 32px;
+// $table-hover-bg: $neutral-n4;
+
+// border 
+$border-color: #DFDFE7;
+
+// negative margins
+$enable-negative-margins: true;
+
+// Import default variables so you can use Bootstrap defaults like $spacer
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+// spacing 
+$spacers: (
+  0: 0,
+  1: $spacer * .25, // 4px
+  2: $spacer * .5, // 8px
+  3: $spacer, // 16px
+  4: $spacer * 1.5, // 24px
+  5: $spacer * 2, // 32px
+  6: $spacer * 2.25, // 36px
+  7: $spacer * 2.5, // 40px
+  8: $spacer * 3, // 48px
+  9: $spacer * 3.5, // 56px
+  10: $spacer * 4, // 64px
+);
+
+@import "../../../../node_modules/bootstrap/scss/variables-dark.scss";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/maps";
+// for spacing use utilities and utilities/api
+@import "../../../../node_modules/bootstrap/scss/utilities";
+@import "../../../../node_modules/bootstrap/scss/root";
+@import "../../../../node_modules/bootstrap/scss/reboot";
+@import "../../../../node_modules/bootstrap/scss/type";
+@import "../../../../node_modules/bootstrap/scss/images";
+@import "../../../../node_modules/bootstrap/scss/containers";
+@import "../../../../node_modules/bootstrap/scss/grid";
+@import "../../../../node_modules/bootstrap/scss/tables";
+@import "../../../../node_modules/bootstrap/scss/forms";
+@import "../../../../node_modules/bootstrap/scss/buttons";
+@import "../../../../node_modules/bootstrap/scss/transitions";
+@import "../../../../node_modules/bootstrap/scss/dropdown";
+@import "../../../../node_modules/bootstrap/scss/nav";
+@import "../../../../node_modules/bootstrap/scss/navbar";
+@import "../../../../node_modules/bootstrap/scss/card";
+@import "../../../../node_modules/bootstrap/scss/modal";
+@import "../../../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../../../node_modules/bootstrap/scss/pagination";
+// Helpers
+// @import "../../../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../../../node_modules/bootstrap/scss/utilities/api";
+
+// 5. Add additional custom code here
+.btn-primary {
+    color: #fff;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to top, #fff, #e7e7db);
+ 
+}
+
+.main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.top-title h2{
+  color: rgb(51 65 85 /1);
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.glass-ui {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+.ptb-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* navbar */
+
+.custom-nav .navbar-brand img {
+  height: 40px;
+}
+
+.custom-nav .navbar-nav .nav-link {
+ 
+  color: #333!important;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.custom-nav .navbar-nav .nav-link:hover{
+  color: #9e0b0f!important;
+}
+
+/* card */
+
+.card {
+  transition: .2s all;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-card .content p {
+  margin-bottom: 0;
+  font-weight: 600;
+  padding-left: 6px;
+  color: #000;
+ 
+}
+
+
+/* custom btn */
+
+.btn-brand {
+  padding: 15px 42px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 2.26px;
+  line-height: 1.6875;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  background: #9e0b0f;
+  background: linear-gradient(90deg,#9e0b0f,#ce1016);
+  border: 2px solid #e61720;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  transition: .1s ease-out;
+}
+

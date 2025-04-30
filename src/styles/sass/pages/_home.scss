@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+/* list page */
+
+.subbanner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    z-index: 1;
+  }
+  .hero {
+    background: url('../../img/hero.jpg') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    z-index: 1;
+  }
+  
+  .subbanner::after, .hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+  }
+  
+  .spell-list-bg {
+    background: url('../img/list-bg.avif') center center no-repeat;
+    background-size: cover;
+  }
+  .fav-list-bg {
+    background: url('../img/fav-list-bg.avif') center center no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+  }
+  .hero-content h1,
+  .hero-content h2, .hero-content p {
+    color: #fff;
+  }
+  
+  .hero-content h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  .hero-content h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 50px;
+  
+  }
+  
+  .hero .hero-content p {
+    font-size: 20px;
+  }
+  
+
+  .content {
+    flex: 1;
+    background-color: rgb(243 244 246/ 1);
+    border-radius: 5px;
+   
+  }
+  
+  .content a {
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    padding-left: 8px
+  }
+
+  .hero-content h1, .hero-content h2 {
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+  }
+  .hero-content p {
+   
+    -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 4s; /* Firefox < 16 */
+        -ms-animation: fadein 4s; /* Internet Explorer */
+         -o-animation: fadein 4s; /* Opera < 12.1 */
+            animation: fadein 4s;
+  }
+  
+  .hero-content a {
+    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 5s; /* Firefox < 16 */
+     -ms-animation: fadein 5s; /* Internet Explorer */
+      -o-animation: fadein 5s; /* Opera < 12.1 */
+         animation: fadein 5s;
+  }
+  
+  
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  

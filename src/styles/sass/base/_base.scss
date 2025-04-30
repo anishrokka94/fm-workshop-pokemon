@@ -1,0 +1,29 @@
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  // color: $brand-color;
+  text-decoration: none;
+}
+
+.outer-container {
+  display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    padding: 16px
+}
