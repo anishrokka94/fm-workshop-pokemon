@@ -1,0 +1,15 @@
+.card {
+    .fav-icon {
+        opacity: 0;
+        transition: .1s all ease;
+        right: -20px;
+
+    }
+
+    &:hover {
+        .fav-icon {
+            opacity: 1;
+            right: 0px;
+        }
+    }
+}

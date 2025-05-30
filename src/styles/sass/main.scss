@@ -24,11 +24,13 @@
 
 // 5. Components
 @import
-  'components/button';
+  'components/button',
+  'components/pokemonCard';
 
 // 6. Page-specific styles
 @import
   'pages/home',
+  'pages/pokemonDetails',
   'pages/login';
 
 // 7. Themes

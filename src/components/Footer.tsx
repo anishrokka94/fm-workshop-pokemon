@@ -7,15 +7,17 @@ const Footer = () => {
   <div className="container">
     <div className="row">
       <div className="col-md-4 mb-3">
+        {/* <img src="../../src/img/pokemon.png" /> */}
         <h5>Pokedox</h5>
-        <p className="text-muted">Building modern UIs with React and Bootstrap.</p>
+        <small>&copy; 2025. All rights reserved.</small>
+        
       </div>
       <div className="col-md-4 mb-3">
         <h5>Quick Links</h5>
         <ul className="list-unstyled">
           <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
           <li><Link to="/about" className="text-light text-decoration-none">About</Link></li>
-          <li><Link to="/favourites" className="text-light text-decoration-none">Contact</Link></li>
+          <li><Link to="/favourites" className="text-light text-decoration-none">Favourites</Link></li>
         </ul>
       </div>
       <div className="col-md-4 mb-3">
@@ -25,9 +27,7 @@ const Footer = () => {
         <Link to="#" className="text-light"><i className="bi bi-instagram"></i></Link>
       </div>
     </div>
-    <div className="text-center pt-3 border-top border-secondary mt-3">
-      <small>&copy; 2025 MySite. All rights reserved.</small>
-    </div>
+   
   </div>
 </footer>
 

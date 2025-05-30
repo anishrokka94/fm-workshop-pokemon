@@ -1,0 +1,42 @@
+.perspective-card {
+  border-radius: 10px;
+  border-bottom-color: #b8c2cc;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 1s ease 0s;
+  -webkit-font-smoothing: antialiased;
+
+  &.perspective-card-right {
+    transform: perspective(50em) rotatey(40deg);
+  }
+
+  &.perspective-card-left {
+    transform: perspective(50em) rotatey(-40deg);
+  }
+
+  &:hover {
+    transform: perspective(50em) rotatey(10deg);
+  }
+}
+
+.bg-logo {
+  position: relative;
+
+  &::before {
+    content: "";
+    background: rgba(255, 255, 255, 0.11);
+    mask: url("../../../../public/img/bg-logo.png") 0% 0% / cover no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
