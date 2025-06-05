@@ -3,8 +3,6 @@ import Select from "react-select";
 import axios from "axios";
 import { Pokemon, AdvancedSearchProps } from "./AdvancedSearch.d";
 import useFetchFilterTypes from "../../../hooks/useFetchFilterTypes";
-import useFetch from "../../../hooks/useFetch";
-import { useEffect, useState } from "react";
 import { fetchPokedexDetails } from "../../../services/pokedexService";
 
 interface FormData {
@@ -19,30 +17,23 @@ const AdvancedSearch = ({ onSearch }: AdvancedSearchProps) => {
   const { filterCategories } = useFetchFilterTypes();
   // const { getPokedex } = useFetch();
 
-  const typeOptions = [
-    {
-      label: "Types",
-      options: filterCategories?.types.map((type) => ({
-        value: type,
-        label: type.charAt(0).toUpperCase() + type.slice(1),
-      })),
-    },
+  const typeOptions =
+    filterCategories?.types.map((type) => ({
+      value: type,
+      label: type.charAt(0).toUpperCase() + type.slice(1),
+    })) || [];
 
-    {
-      label: "Habitats",
-      options: filterCategories?.habitats.map((habitat) => ({
-        value: habitat,
-        label: habitat.charAt(0).toUpperCase() + habitat.slice(1),
-      })),
-    },
-    {
-      label: "Classifications",
-      options: filterCategories?.classifications.map((classification) => ({
-        value: classification,
-        label: classification.charAt(0).toUpperCase() + classification.slice(1),
-      })),
-    },
-  ];
+  const habitatOptions =
+    filterCategories?.habitats.map((habitat) => ({
+      value: habitat,
+      label: habitat.charAt(0).toUpperCase() + habitat.slice(1),
+    })) || [];
+
+  const classificationOptions =
+    filterCategories?.classifications.map((classification) => ({
+      value: classification,
+      label: classification.charAt(0).toUpperCase() + classification.slice(1),
+    })) || [];
 
   // console.log("type options", typeOptions);
 
@@ -56,11 +47,13 @@ const AdvancedSearch = ({ onSearch }: AdvancedSearchProps) => {
 
   const onSubmit = async (data: FormData) => {
     // console.log("data", data);
-    const allSelectedValues = data.types?.map((option) => option.value) || [];
+    // const allSelectedValues = data.types?.map((option) => option.value) || [];
 
     const payload = {
       searchText: data.searchText || "",
-      types: allSelectedValues,
+      types: data.types?.map((opt) => opt.value) || [],
+      habitats: data.habitats?.map((opt) => opt.value) || [],
+      classifications: data.classifications?.value || "",
     };
 
     try {
@@ -106,7 +99,8 @@ const AdvancedSearch = ({ onSearch }: AdvancedSearchProps) => {
             {...register("searchText")}
           />
         </div>
-        <div className="col-6">
+
+        <div className="col-md-3">
           <Controller
             name="types"
             control={control}
@@ -121,8 +115,39 @@ const AdvancedSearch = ({ onSearch }: AdvancedSearchProps) => {
           />
         </div>
 
-        <div className="col-md-2">
-          <div className="d-flex gap-2">
+        <div className="col-md-3">
+          <Controller
+            name="habitats"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                options={habitatOptions}
+                isMulti
+                placeholder="Select habitats"
+              />
+            )}
+          />
+        </div>
+
+        <div className="col-md-3">
+          <Controller
+            name="classifications"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                options={classificationOptions}
+                isMulti={false}
+                placeholder="Select classification"
+                isClearable
+              />
+            )}
+          />
+        </div>
+
+        <div className="col-md-12">
+          <div className="d-flex gap-2 mt-3 justify-content-end">
             <button className="btn btn-dark btn-sm" disabled={isSubmitting}>
               {" "}
               {isSubmitting ? "Filtering..." : "Filter"}{" "}

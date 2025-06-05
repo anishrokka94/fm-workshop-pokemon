@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Logo from "../../public/img/svg/Logo";
 import HeartIcon from "../../public/img/svg/HeartIcon";
 import { FavouriteContext } from "../global-state/context/FavouriteContext";
+import LoginButton from "./LoginButtons/LoginButton";
+import LogoutButton from "./LogoutButtons/LogoutButtons";
 // import { FavouriteContext } from "../global-state/FavouriteContext";
 
 const Navbar = () => {
@@ -46,7 +48,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="nav-icons">
+          <div className="nav-icons d-flex gap-4">
             <Link className="nav-link" to="/favourites">
               <div className="position-relative">
                 <HeartIcon />
@@ -66,6 +68,9 @@ const Navbar = () => {
                 </span>
               </div>
             </Link>
+
+            <LoginButton />
+            <LogoutButton />
           </div>
         </div>
       </div>

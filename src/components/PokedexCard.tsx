@@ -14,9 +14,10 @@ import { toast } from "react-toastify";
 interface PokedexCardProps {
   list: PokemonDetail[] | Pokemon[];
   loading: boolean;
+  refetch: () => void;
 }
 
-const PokedexCard = ({ list, loading }: PokedexCardProps) => {
+const PokedexCard = ({ list, loading, refetch }: PokedexCardProps) => {
   const { favourites, dispatch } = useContext(FavouriteContext);
 
   const { removeFavourite } = useRemovefavourite();
@@ -33,6 +34,7 @@ const PokedexCard = ({ list, loading }: PokedexCardProps) => {
       });
 
       dispatch({ type: ADD_TO_FAVOURITES, payload: pokemon });
+      refetch();
       notifySuccess();
     } catch (error) {
       console.error("Failed to add favourite:", error);
@@ -41,6 +43,7 @@ const PokedexCard = ({ list, loading }: PokedexCardProps) => {
 
   const handleRemove = async (pokemon: PokemonDetail) => {
     dispatch({ type: REMOVE_FROM_FAVOURITES, payload: pokemon });
+    refetch();
 
     try {
       await removeFavourite(pokemon);
